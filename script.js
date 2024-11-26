@@ -10,6 +10,10 @@ var signupPasswordInput = document.getElementById("signupPassword");
 var signUpMessage = document.getElementById("exist")
 
 var EmailList = [];
+if(localStorage.getItem("EmailList") != null){
+    EmailList = JSON.parse(localStorage.getItem("EmailList"));
+    console.log(EmailList)
+}
 
 function validName(){
     var name = signupNameInput.value;
@@ -67,7 +71,8 @@ function signUp(){
     if(validName() && validEmail() && validPassword()){
         signUpMessage.textContent = "";
         EmailList.push(user)
-        clearSignUpForm()
+        localStorage.setItem("EmailList", JSON.stringify(EmailList));
+        clearSignUpForm();
         console.log(EmailList)
     }
     // incorrect email or password
