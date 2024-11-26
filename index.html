@@ -9,25 +9,27 @@
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./bootstrap-5.3.3/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="home" cz-shortcut-listen="true">
+<body>
     <main>
         <!-- signIn -->
         <section class="signIn">
             <div class="container my-5 text-center ">
-                <div class="group m-auto w-75 p-5">
+                <div class="group m-auto w-75 p-5 shadow-lg p-3 mb-5">
                     <h1>Smart Login System</h1>
 
-                    <input id="signinEmail" class="form-control my-3" placeholder="Enter your email" type="text">
-                    <input id="signinPassword" class="form-control my-3" placeholder="Enter your password"
+                    <div  class="group_input">
+                    <input id="signinEmail" class="custom-input" placeholder="Enter your email" type="text">
+                    <input id="signinPassword" class="custom-input" placeholder="Enter your password"
                         type="password">
                     <p id="incorrect"></p>
+                </div>
 
-                    <button onclick="login()" class="btn btn-outline-info w-100 my-3">Login<i class="fa-solid fa-right-to-bracket"></i></button>
+                    <button onclick="login()" class="btn btn-outline-info w-100 my-3 p-2">Login<i class="fa-solid fa-right-to-bracket"></i></button>
                     <p class="text-white">Don’t have an account? <a class="text-white" href="/signup">Sign Up</a></p>
-
                 </div>
             </div>
         </section>
