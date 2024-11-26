@@ -50,3 +50,7 @@ input:focus{
 .btn:nth-child(1){
     border: 1px solid var(--warning-color);
 }
+
+#incorrect, #exist{
+    color: red;
+}
