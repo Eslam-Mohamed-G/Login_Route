@@ -3,7 +3,7 @@
     --header-color: rgb(23, 162, 184);
     --input-color:  rgb(182, 182, 182);
     --border-color: rgb(206, 212, 218);
-    /* --header-color: rgb(48, 64, 74); */
+    --warning-color: rgb(255, 193, 7);
 }
 
 body{
@@ -21,12 +21,32 @@ input{
     padding: 8px;
     outline: none;
 }
+.btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all ease-in-out .3s;
+}
+
+.btn:hover{
+    color: white;
+}
 input:focus{
     border: 1px solid var(--header-color);
+}
+
+.group{
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
 }
 .group_input{
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
+}
+
+.btn:nth-child(1){
+    border: 1px solid var(--warning-color);
 }
