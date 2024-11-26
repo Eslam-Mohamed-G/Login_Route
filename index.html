@@ -1,19 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <main>
 
+<body id="home" cz-shortcut-listen="true">
+    <main>
+        <!-- signIn -->
+        <section class="signIn">
+            <div class="container my-5 text-center ">
+                <div class="group m-auto w-75 p-5">
+                    <h1>Smart Login System</h1>
+
+                    <input id="signinEmail" class="form-control my-3" placeholder="Enter your email" type="text">
+                    <input id="signinPassword" class="form-control my-3" placeholder="Enter your password"
+                        type="password">
+                    <p id="incorrect"></p>
+
+                    <button onclick="login()" class="btn btn-outline-info w-100 my-3">Login<i class="fa-solid fa-right-to-bracket"></i></button>
+                    <p class="text-white">Don’t have an account? <a class="text-white" href="/signup">Sign Up</a></p>
+
+                </div>
+            </div>
+        </section>
+        <!-- signIn -->
+
+        <!-- logOut -->
+        <section class="logOut">
+
+            <nav class="navbar navbar-expand-lg navbar-dark group">
+                <div class="container">
+                    <a class="navbar-brand" href="#">SMART LOGIN</a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item ">
+                                <a class="nav-link btn btn-outline-warning " href="/" onclick="logout()">Logout<i class="fa-solid fa-right-from-bracket"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container my-5 text-center h-100 d-flex align-items-center">
+                <div class="group m-auto w-75 p-5">
+                    <h1 id="username"></h1>
+                </div>
+            </div>
+        </section>
+        <!-- logOut -->
     </main>
 
-
-    <i class="fa-solid fa-right-to-bracket"></i>
-    <i class="fa-solid fa-right-from-bracket"></i>
+    
+    
     <script src="script.js"></script>
 </body>
+
 </html>
