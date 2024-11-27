@@ -142,4 +142,8 @@ function clearSignUpForm(){
     signUpMessage.textContent = "";
 }
 
+function clearSignInForm(){
+    signinPasswordInput.value ="";
+    signinEmailInput.value = "";
+}
 // localStorage.clear();
