@@ -105,7 +105,7 @@ function checkEmail() {
         for (i = 0; i < EmailList.length; i++) {
             if (EmailList[i].email === emailSigin) {
                 existsEmail = true;
-                user = EmailList[i].email
+                user = EmailList[i].name
                 break;
             }
         }
@@ -142,11 +142,9 @@ function checkPassword() {
 }
 
 function login() {
-    var username = window.document.getElementById("username");
     if (checkEmail() && checkPassword()) {
-        window.location.href = "welcome.html";
-        username.textContent = "welcome" 
-
+        // window.location.href = "welcome.html";
+        username.textContent = `Welcome ${user}`;
         console.log(user)
         clearSignInForm()
     }
