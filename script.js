@@ -91,12 +91,13 @@ function signUp(){
 }
 
 function checkEmail() {
-    email = signinEmailInput.value;
-    if(!email){
-        signinMessage.textContent = "all input required"
+    emailSigin = signinEmailInput.value;
+    if(!emailSigin){
+        signinMessage.textContent = "Email required"
+        return false;
     }else {  
         for(i=0; i<EmailList.length; i++){
-            if (EmailList[i].email !== email) {
+            if (EmailList[i].email !== emailSigin) {
                 signinMessage.textContent = "incorrect email"
                 signinEmailInput.style.border = "1px solid red";
                 return false;
@@ -107,9 +108,27 @@ function checkEmail() {
         }
     }
 }
+function checkPassword() {
+    passwordSignIn = signinPasswordInput.value;
+    if(!passwordSignIn){
+        signinMessage.textContent = "Password required"
+        return false;
+    }else{
+        for(i=0; i<EmailList.length; i++){
+            if(EmailList[i].password !== passwordSignIn){
+                signinMessage.textContent = "incorrect Password";
+                signinPasswordInput.style.border = "1px solid red";
+                return false;
+            }else {
+                signinMessage.textContent = "";
+                return true;
+            }
+        }
+    }
+}
 
 function login() {
-    if (checkEmail()) {
+    if (checkEmail() && checkPassword()) {
         
     }
 }
