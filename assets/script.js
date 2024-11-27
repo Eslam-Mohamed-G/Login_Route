@@ -147,6 +147,11 @@ function login() {
     }
 }
 
+function logout() {
+    username.textContent = "";
+    window.location.href = "index.html";
+}
+
 function clearSignUpForm(){
     signupNameInput.value = "";
     signupEmailInput.value = "";
