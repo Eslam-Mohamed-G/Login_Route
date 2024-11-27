@@ -99,10 +99,11 @@ function checkEmail() {
         for(i=0; i<EmailList.length; i++){
             if (EmailList[i].email !== emailSigin) {
                 signinMessage.textContent = "incorrect email"
-                signinEmailInput.style.border = "1px solid red";
+                signinEmailInput.classList.add("borderRed");
                 return false;
             }else {
                 signinMessage.textContent = "";
+                signinEmailInput.classList.remove("borderRed");
                 return true;
             }
         }
@@ -117,10 +118,11 @@ function checkPassword() {
         for(i=0; i<EmailList.length; i++){
             if(EmailList[i].password !== passwordSignIn){
                 signinMessage.textContent = "incorrect Password";
-                signinPasswordInput.style.border = "1px solid red";
+                signinPasswordInput.classList.add("borderRed");
                 return false;
             }else {
                 signinMessage.textContent = "";
+                signinPasswordInput.classList.remove("borderRed");
                 return true;
             }
         }

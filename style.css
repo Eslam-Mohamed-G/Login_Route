@@ -54,3 +54,7 @@ input:focus{
 #incorrect, #exist{
     color: red;
 }
+
+.borderRed{
+    border: 1px solid red;
+}
