@@ -9,6 +9,8 @@ var signupNameInput = document.getElementById("signupName");
 var signupEmailInput = document.getElementById("signupEmail");
 var signupPasswordInput = document.getElementById("signupPassword");
 var signUpMessage = document.getElementById("exist")
+var logOut = document.querySelector(".logOut");
+var signIn = document.querySelector(".signIn");
 
 var EmailList = [];
 if(localStorage.getItem("EmailList") != null){
@@ -142,8 +144,11 @@ function checkPassword() {
 }
 
 function login() {
+
     if (checkEmail() && checkPassword()) {
-        // window.location.href = "welcome.html";
+        signIn.classList.add("d-none")
+        logOut.classList.remove("d-none")
+        logOut.classList.add("d-block")
         username.textContent = `Welcome ${user}`;
         console.log(user)
         clearSignInForm()
@@ -151,8 +156,10 @@ function login() {
 }
 
 function logout() {
-    username.textContent = "";
     window.location.href = "index.html";
+    username.textContent = "";
+    signIn.classList.remove("d-none");
+    logOut.classList.add("d-none")
 }
 
 function clearSignUpForm(){
