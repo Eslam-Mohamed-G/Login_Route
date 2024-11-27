@@ -141,7 +141,6 @@ function checkPassword() {
 function login() {
     if (checkEmail() && checkPassword()) {
         window.location.href = "welcome.html";
-        username.textContent = `Welcome ${user}`;
         console.log(user)
         clearSignInForm()
     }
