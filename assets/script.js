@@ -84,6 +84,9 @@ function signUp(){
             localStorage.setItem("EmailList", JSON.stringify(EmailList));
             clearSignUpForm();
             signUpMessage.textContent = "sucsess";
+            setTimeout(()=>{
+                signUpMessage.textContent = "";
+            },1000)
         }
 
         console.log(EmailList)
@@ -102,7 +105,7 @@ function checkEmail() {
         for (i = 0; i < EmailList.length; i++) {
             if (EmailList[i].email === emailSigin) {
                 existsEmail = true;
-                user = EmailList[i].name
+                user = EmailList[i].email
                 break;
             }
         }
@@ -139,8 +142,11 @@ function checkPassword() {
 }
 
 function login() {
+    var username = window.document.getElementById("username");
     if (checkEmail() && checkPassword()) {
         window.location.href = "welcome.html";
+        username.textContent = "welcome" 
+
         console.log(user)
         clearSignInForm()
     }
