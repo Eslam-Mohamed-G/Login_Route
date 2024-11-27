@@ -2,6 +2,7 @@
 var signinEmailInput = document.getElementById("signinEmail");
 var signinPasswordInput = document.getElementById("signinPassword");
 var signinMessage = document.getElementById("incorrect");
+var username = document.getElementById("username");
 
 // signUp
 var signupNameInput = document.getElementById("signupName");
@@ -89,24 +90,32 @@ function signUp(){
     }
     // incorrect email or password
 }
-
+var user;
 function checkEmail() {
     emailSigin = signinEmailInput.value;
-    if(!emailSigin){
+    if (!emailSigin) {
         signinMessage.textContent = "Email required"
         return false;
-    }else {  
-        for(i=0; i<EmailList.length; i++){
-            if (EmailList[i].email !== emailSigin) {
-                signinMessage.textContent = "incorrect email"
-                signinEmailInput.classList.add("borderRed");
-                return false;
-            }else {
-                signinMessage.textContent = "";
-                signinEmailInput.classList.remove("borderRed");
-                return true;
+    } else {
+        existsEmail = false;
+        
+        for (i = 0; i < EmailList.length; i++) {
+            if (EmailList[i].email === emailSigin) {
+                existsEmail = true;
+                user = EmailList[i].name
+                break;
             }
         }
+        if (existsEmail) {
+            signinMessage.textContent = "";
+            signinEmailInput.classList.remove("borderRed");
+            return true;
+        } else {
+            signinMessage.textContent = "incorrect email"
+            signinEmailInput.classList.add("borderRed");
+            return false;
+        }
+
     }
 }
 function checkPassword() {
@@ -121,6 +130,7 @@ function checkPassword() {
                 signinPasswordInput.classList.add("borderRed");
                 return false;
             }else {
+                userName = EmailList[i].name;
                 signinMessage.textContent = "";
                 signinPasswordInput.classList.remove("borderRed");
                 return true;
@@ -131,7 +141,8 @@ function checkPassword() {
 
 function login() {
     if (checkEmail() && checkPassword()) {
-        
+        console.log(user)
+        clearSignInForm()
     }
 }
 
@@ -145,5 +156,6 @@ function clearSignUpForm(){
 function clearSignInForm(){
     signinPasswordInput.value ="";
     signinEmailInput.value = "";
+    signinMessage.textContent = "";
 }
 // localStorage.clear();
