@@ -79,10 +79,10 @@ function signUp(){
         if(existsEmail){
             signUpMessage.textContent = "Email already exists";
         }else {
-            signUpMessage.textContent = "sucsess";
             EmailList.push(user)
             localStorage.setItem("EmailList", JSON.stringify(EmailList));
             clearSignUpForm();
+            signUpMessage.textContent = "sucsess";
         }
 
         console.log(EmailList)
@@ -90,10 +90,35 @@ function signUp(){
     // incorrect email or password
 }
 
+function checkEmail() {
+    email = signinEmailInput.value;
+    if(!email){
+        signinMessage.textContent = "all input required"
+    }else {  
+        for(i=0; i<EmailList.length; i++){
+            if (EmailList[i].email !== email) {
+                signinMessage.textContent = "incorrect email"
+                signinEmailInput.style.border = "1px solid red";
+                return false;
+            }else {
+                signinMessage.textContent = "";
+                return true;
+            }
+        }
+    }
+}
+
+function login() {
+    if (checkEmail()) {
+        
+    }
+}
+
 function clearSignUpForm(){
     signupNameInput.value = "";
     signupEmailInput.value = "";
     signupPasswordInput.value = "";
+    signUpMessage.textContent = "";
 }
 
 // localStorage.clear();
