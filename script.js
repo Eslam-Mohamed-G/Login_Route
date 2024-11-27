@@ -130,7 +130,6 @@ function checkPassword() {
                 signinPasswordInput.classList.add("borderRed");
                 return false;
             }else {
-                userName = EmailList[i].name;
                 signinMessage.textContent = "";
                 signinPasswordInput.classList.remove("borderRed");
                 return true;
@@ -141,7 +140,7 @@ function checkPassword() {
 
 function login() {
     if (checkEmail() && checkPassword()) {
-        username.textContent = `Welcome ${user}`;
+        // username.textContent = `Welcome ${user}`;
         console.log(user)
         clearSignInForm()
     }
