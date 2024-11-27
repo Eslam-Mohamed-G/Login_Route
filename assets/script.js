@@ -15,7 +15,7 @@ var signIn = document.querySelector(".signIn");
 var EmailList = [];
 if(localStorage.getItem("EmailList") != null){
     EmailList = JSON.parse(localStorage.getItem("EmailList"));
-    console.log(EmailList)
+    // console.log(EmailList)
 }
 
 function validName(){
@@ -80,11 +80,13 @@ function signUp(){
         }
 
         if(existsEmail){
+            signUpMessage.style.color = "red";
             signUpMessage.textContent = "Email already exists";
         }else {
             EmailList.push(user)
             localStorage.setItem("EmailList", JSON.stringify(EmailList));
             clearSignUpForm();
+            signUpMessage.style.color = "green";
             signUpMessage.textContent = "sucsess";
             setTimeout(()=>{
                 signUpMessage.textContent = "";
@@ -150,7 +152,7 @@ function login() {
         logOut.classList.remove("d-none")
         logOut.classList.add("d-block")
         username.textContent = `Welcome ${user}`;
-        console.log(user)
+        // console.log(user)
         clearSignInForm()
     }
 }
