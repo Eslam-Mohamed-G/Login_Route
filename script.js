@@ -141,6 +141,7 @@ function checkPassword() {
 
 function login() {
     if (checkEmail() && checkPassword()) {
+        username.textContent = `Welcome ${user}`;
         console.log(user)
         clearSignInForm()
     }
