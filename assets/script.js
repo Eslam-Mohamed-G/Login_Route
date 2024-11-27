@@ -140,7 +140,8 @@ function checkPassword() {
 
 function login() {
     if (checkEmail() && checkPassword()) {
-        // username.textContent = `Welcome ${user}`;
+        window.location.href = "welcome.html";
+        username.textContent = `Welcome ${user}`;
         console.log(user)
         clearSignInForm()
     }
