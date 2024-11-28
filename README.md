@@ -1,44 +1,70 @@
-# Smart Login System 
+# User Registration and Login System
 
+This project is a simple web application that allows users to **sign up** and **log in** using **localStorage** to store user data.
+
+---
+
+## 🛠️ **Features:**
+1. **Sign Up:**
+   - Users can register by entering their name, email, and password.
+   - Data validation includes:
+     - The name must have at least **3 characters**.
+     - The email must be a **Gmail** address (e.g., user@gmail.com).
+     - The password cannot be empty.
+   - User data is stored in **localStorage**.
+![Design preview for the Time tracking dashboard coding challenge](./assets/image/preview_2.png)
+
+2. **Sign In:**
+   - Users can log in by entering their registered email and password.
+   - The email and password are validated against data stored in **localStorage**.
+   - If the credentials are correct, a welcome message is displayed.
 ![Design preview for the Time tracking dashboard coding challenge](./assets/image/preview_1.png)
 
-## Welcome! 👋
-
-Thanks for checking out this front-end coding.
-
-## Project description.
-
-**This project is a bookmarks management application where users can add site name and link, validate entries, and save them locally using localStorage. The user can also visit or delete links.**
-
-
-
-### Expected behaviour
-
-- Verify the validity of the site name. The name must contain more than 3 characters.
-- A notification is displayed in green if the name is correct, or red if it is incorrect.
-- If the input is incorrect, an error message is displayed with the field highlighted in red.
-![Design preview for the Time tracking dashboard coding challenge](./assets/image/preview_2.png)
+3. **Log Out:**
+   - Allows users to log out and redirects them to the login page.
 ![Design preview for the Time tracking dashboard coding challenge](./assets/image/preview_3.png)
 
+4. **Form Reset:**
+   - Clears the input fields after each operation (sign up or sign in).
 
+---
 
-### How to use
-- Enter the name of the website in its field.
-- Enter the website link in its field
-- If the input is correct, click the Add button to add it to the table and save it in localStorage
-- You can visit the link directly by clicking the "Visit" button.
-- To delete a specific site, press the "Delete" button.
+## ⚙️ **Technologies Used:**
+- **HTML**: For the basic structure of the application.
+- **CSS**: For styling the user interface.
+- **JavaScript**: To implement the functionality and interactivity.
+- **localStorage**: To persist and retrieve user data.
 
+---
 
-### Code structure
-- HTML: Contains text fields, buttons, and a table form.
-- CSS: To improve the design and show correct and incorrect tags.
-- JavaScript: To perform the following functions:
-  1- Verify that the site name is at least 3 characters long.
-  2- Validate the URL using a regular expression (RegEx).
-  3- Add data: Store data in localStorage and add it to the table.
-     Display Data: Fetch the stored data and display it in the table.
-     Delete data: Delete a specific row from the table and from localStorage.
-  4- Reset fields: clear entries and hide alert messages.
-- Mobile-first
+## 📂 **Project Files:**
+- **index.html**: Contains the user interface.
+- **style.css**: Provides styling for the application.
+- **script.js**: Implements the core functionality.
+
+---
+
+## 📖 **Code Explanation:**
+
+### 1. **Data Validation During Sign Up:**
+- **Name**: Must have at least 3 characters and consist of letters only.
+- **Email**: Must follow the Gmail format.
+- **Password**: Cannot be empty.
+
+### 2. **Sign Up Process:**
+- Validates the entered data.
+- If the email already exists, an error message is displayed.
+- If the email is new, the user is added to **localStorage**.
+
+### 3. **Sign In Process:**
+- Checks that the entered email and password match registered data.
+- Displays a welcome message if the credentials are correct.
+- Shows an error message if the credentials are incorrect.
+
+---
+
+## 📋 **Potential Improvements:**
+- Enhance password validation to check for strength (e.g., length, special characters).
+- Support additional email domains (e.g., Yahoo, Outlook).
+- Use libraries like **React** or **Tailwind CSS** for a more interactive and modern UI.
 
