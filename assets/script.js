@@ -100,6 +100,7 @@ function signUp(){
 var user;
 function checkEmail() {
     emailSigin = signinEmailInput.value;
+    var gmailCheckRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     if (!emailSigin) {
         signinMessage.textContent = "Email required"
         return false;
@@ -118,9 +119,14 @@ function checkEmail() {
             signinEmailInput.classList.remove("borderRed");
             return true;
         } else {
-            signinMessage.textContent = "incorrect email"
-            signinEmailInput.classList.add("borderRed");
-            return false;
+            if(!gmailCheckRegex.test(emailSigin)){
+                signinMessage.textContent = "incorrect email"
+                return false;
+            }else {
+                signinMessage.textContent = "dosn't exists email"
+                signinEmailInput.classList.add("borderRed");
+                return false;
+            }
         }
 
     }
